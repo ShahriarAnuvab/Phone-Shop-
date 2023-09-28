@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const Banner = ({ searchInput, handleSearchInputChange }) => {
   return (
     <div className="p-5">
@@ -28,6 +29,10 @@ const Banner = ({ searchInput, handleSearchInputChange }) => {
       </div>
     </div>
   );
+};
+Banner.propTypes = {
+  searchInput: PropTypes.string,
+  handleSearchInputChange: PropTypes.func
 };
 
 export default Banner;
