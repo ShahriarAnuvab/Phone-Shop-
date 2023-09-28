@@ -1,4 +1,4 @@
-const Banner = () => {
+const Banner = ({ searchInput, handleSearchInputChange }) => {
   return (
     <div className="p-5">
       <div
@@ -10,15 +10,19 @@ const Banner = () => {
       >
         <div className="hero-overlay bg-opacity-60 p-5"></div>
         <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md flex flex-col md:flex-row  justify-center items-center gap-3">
+          <div className="max-w-md flex flex-col md:flex-row justify-center items-center gap-3">
             <div className="form-control w-full max-w-xs">
               <input
                 type="text"
                 placeholder="Search By category"
-                className="input input-bordered w-full text-black "
+                className="input input-bordered w-full text-black"
+                value={searchInput}
+                onChange={(e) => handleSearchInputChange(e.target.value)}
               />
             </div>
-            <button className="btn btn-primary">Search</button>
+            <button className="btn bg-pink-600 text-white outline-none border-none">
+              Search
+            </button>
           </div>
         </div>
       </div>
